@@ -5,3 +5,5 @@ Caso queria só usar, dentro da pasta dist tem o exe do meu progama, ele é um p
 Tipo de imagens suportadas:
 
 .jpg, .jpeg, .png, .bmp, .tiff
+
+Com o aplicativo aberto, basta selecionar suas fotos (pode ser mais de uma) e cliar em converter, com isso ele vai pedir para vc selecionar o local onde vai ser salvo, basta colocar o nome e está feito.
