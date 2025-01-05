@@ -6,4 +6,4 @@ Tipo de imagens suportadas:
 
 .jpg, .jpeg, .png, .bmp, .tiff
 
-Com o aplicativo aberto, basta selecionar suas fotos (pode ser mais de uma) e cliar em converter, com isso ele vai pedir para vc selecionar o local onde vai ser salvo, basta colocar o nome e está feito.
+Com o aplicativo aberto, basta selecionar suas fotos (pode ser mais de uma) cliar em converter, com isso ele vai pedir para vc selecionar o local onde vai ser salvo, basta colocar o nome e está feito.
