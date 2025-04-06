@@ -17,10 +17,22 @@ def converter_para_pdf():
         return
     
     try:
-        imagens = []
+        imagens_pdf = []
+        largura_a4 = 595
+        altura_a4 = 842
+        
         for foto in fotos:
             img = Image.open(foto).convert("RGB")
-            imagens.append(img)
+
+            img.thumbnail((largura_a4, altura_a4), Image.LANCZOS)
+            
+            imagem_a4 = Image.new("RGB", (largura_a4, altura_a4), "white")
+            
+            pos_x = (largura_a4 - img.width) // 2
+            pos_y = (altura_a4 - img.height) // 2
+
+            imagem_a4.paste(img, (pos_x, pos_y))
+            imagens_pdf.append(imagem_a4)
         
         arquivo_pdf = filedialog.asksaveasfilename(
             defaultextension=".pdf",
@@ -28,7 +40,8 @@ def converter_para_pdf():
             title="Salvar como"
         )
         if arquivo_pdf:
-            imagens[0].save(arquivo_pdf, save_all=True, append_images=imagens[1:])
+
+            imagens_pdf[0].save(arquivo_pdf, save_all=True, append_images=imagens_pdf[1:])
             messagebox.showinfo("Sucesso", f"PDF salvo com sucesso em:\n{arquivo_pdf}")
     except Exception as e:
         messagebox.showerror("Erro", f"Ocorreu um erro ao converter as fotos: {str(e)}")
