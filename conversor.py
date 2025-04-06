@@ -24,10 +24,30 @@ def converter_para_pdf():
         for foto in fotos:
             img = Image.open(foto).convert("RGB")
 
-            img.thumbnail((largura_a4, altura_a4), Image.LANCZOS)
+            dpi = 300 
+            largura_original, altura_original = img.size
+            nova_largura = int(largura_original * dpi / 72) 
+            nova_altura = int(altura_original * dpi / 72)
+
+            img = img.resize((nova_largura, nova_altura), Image.LANCZOS)
+
+            img_ratio = img.width / img.height
+            a4_ratio = largura_a4 / altura_a4
             
+            if img_ratio > a4_ratio:
+                new_width = largura_a4
+                new_height = int(largura_a4 / img_ratio)
+            else:
+                new_height = altura_a4
+                new_width = int(altura_a4 * img_ratio)
+
+            new_width = int(new_width * 0.9) 
+            new_height = int(new_height * 0.9) 
+
+            img = img.resize((new_width, new_height), Image.LANCZOS)
+
             imagem_a4 = Image.new("RGB", (largura_a4, altura_a4), "white")
-            
+
             pos_x = (largura_a4 - img.width) // 2
             pos_y = (altura_a4 - img.height) // 2
 
