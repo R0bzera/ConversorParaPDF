@@ -1,4 +1,4 @@
-('C:\\Users\\souza\\Desktop\\ConversorDePDF\\build\\conversor\\PYZ-00.pyz',
+('C:\\Projetos\\ConversorParaPDF\\build\\conversor\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\souza\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
